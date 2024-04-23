@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Detail</title>
+    <link rel="stylesheet" href="{% static 'todos/todo-detail-style.css' %}" />
+  </head>
+  <body>
+    <h2>{{ todo.title }}</h2>
+    <div class="todo-detail">
+      <p class="label">Description:</p>
+      <p>{{ todo.description }}</p>
+      <p class="label">Completed:</p>
+      <p>{{ todo.completed }}</p>
+      <p class="label">Created at:</p>
+      <p>{{ todo.created_at }}</p>
+      <a href="{% url 'todo_update' todo.id %}" class="link">Edit</a> |
+      <a href="{% url 'todo_list' %}" class="link">Back to list</a>
+    </div>
+  </body>
+</html>
